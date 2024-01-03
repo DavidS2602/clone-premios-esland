@@ -1,0 +1,71 @@
+---
+import BentoItem from "./BentoItem.astro";
+---
+
+<section
+    class={`w-full max-w-[1400px] grid grid-cols-10 auto-rows-[25rem] gap-4 mx-auto p-20`}
+>
+    <BentoItem
+        class="col-span-10 md:col-span-4"
+        title="ANDORRA: EL CÉNIT DE LOS PREMIOS ESLAND"
+    >
+        <div
+            slot="image"
+            class="absolute left-0 top-0 bottom-0 w-full h-full group-hover:scale-110 -z-10 transition-scale duration-1000 ease-in-out opacity-80 bg-center bg-blend-luminosity bg-cover bg-no-repeat bg-blue-950"
+            style="background-image: url('/mountain.webp')"
+        >
+        </div>
+        <p slot="content">
+        Una nueva edición <strong>cargada de novedades</strong> y contenido, que empezará
+        <br />
+        varias semanas antes de la ansiada gala. <strong
+            >Directos especiales, <br /> colaboraciones, conciertos y mucho más
+        </strong> en lo que será una <br /> auténtica fiesta dedicada a la creación
+        de contenido.
+        </p>
+    </BentoItem>
+    <BentoItem
+        class="col-span-10 md:col-span-6"
+        title="LA ALFOMBRA BLANCA"
+        subtitle="16 de febrero de 2024"
+    >
+        <div
+        slot="image"
+        class="absolute left-0 top-0 bottom-0 w-full h-full group-hover:scale-110 -z-10 transition-scale duration-1000 ease-in-out opacity-80 bg-center bg-blend-luminosity bg-cover bg-no-repeat bg-blue-950"
+        style="background-image: url('/pistas.webp')"
+        >
+        </div>
+        <p slot="content">
+        Este año, el momento de la alfombra azul será <br /> sustituido y mejorado,
+        gracias a los increíbles <br /> paisajes andorranos, por una <strong>
+            alfombra blanca <br /> en plena nieve,
+        </strong> situada en las <strong
+            >pistas de esquí <br /> de Andorra.</strong
+        >
+        </p>
+    </BentoItem>
+    <BentoItem
+        class="col-span-10 md:col-span-6"
+        title="LA GALA"
+        subtitle="17 de febrero 2024"
+    >
+    <div
+            slot="image"
+            class="absolute left-0 top-0 bottom-0 w-full h-full group-hover:scale-110 -z-10 transition-scale duration-1000 ease-in-out opacity-80 bg-center bg-blend-luminosity bg-cover bg-no-repeat bg-blue-950"
+            style="background-image: url('/grefg.webp')"
+        >
+        </div>
+        <p slot="content">
+        Una gala de premios llena de <strong>
+            contenido de <br /> primer nivel y muchas sorpresas,</strong
+        >
+        en la que se <br /> descubrirán los <strong> ganadores</strong> de esta tercera
+        <br /> edición de los Premios ESLAND.
+        </p>
+    </BentoItem>
+
+    <BentoItem
+        class="col-span-10 md:col-span-4"
+        title="DISFRUTA DEL REDDIT DE LA COMUNIDAD"
+    />
+</section>

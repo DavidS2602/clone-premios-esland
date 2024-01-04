@@ -4,7 +4,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-// Supports weights 100-900
 import '@fontsource-variable/onest';
 ---
 
@@ -43,5 +42,20 @@ import '@fontsource-variable/onest';
 	p strong {
 		font-weight: 500;
 		color: white;
+	}
+	#header-nav {
+		animation: blur 1s linear both;
+		animation-timeline: scroll();
+		animation-range: 0 500px;
+	}
+
+	@keyframes blur {
+		to {
+			box-shadow:
+				0px 5px 50px -5px hsla(0, 0%, 100%, 0.1)
+				0px 0px 0 1px hsla(0, 0%, 100%, 0.1);
+				background: rgba(0, 0, 0, 0.3);
+				backdrop-filter: blur(10px);
+		}
 	}
 </style>

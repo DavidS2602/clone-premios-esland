@@ -1,17 +1,53 @@
----
-import MenuIcon from "../../public/menuIcon.astro";
----
 <header id="header-nav" class="fixed top-0 z-50 w-full px-6 py-2">
     <div class="mx-auto flex max-w-7xl items-center justify-between">
-            <a href="/">
-                <img class="w-10" src="/logo.png" alt="">
-            </a>
-        <nav class="hidden md:flex flex-grow basis-0 w-full gap-x-6 text-lg md:justify-center font-medium">
-            <a href="/info" class="hover:underline">Info</a>
-            <a href="/info" class="hover:underline">Archivo</a>
+        <a href="/">
+            <img class="w-10" src="/logo.png" alt="" />
+        </a>
+        <nav
+            class="hidden md:flex flex-grow basis-0 w-full gap-x-6 text-lg md:justify-center font-medium"
+        >
+        <a href="/info" class="hover:underline">Info</a>
+        <a href="/info" class="hover:underline">Archivo</a>
         </nav>
-        <button id="menu-toggle" class="flex flex-grow basis-0 justify-end text-2xl md:hidden z-50">
-            <span id="menu-icon"><MenuIcon /></span>
+        <button
+            id="menu-toggle"
+            class="flex flex-grow basis-0 justify-end text-2xl md:hidden z-50"
+        >
+        <span id="menu-icon">☰</span>
         </button>
+        <div>
+        <button
+            class="md:text-sm lg:text-base md:py-2 border-2 p-4 rounded-full hidden"
+        >
+            ESLAND:EL DOCUMENTAL
+        </button>
+        </div>
     </div>
+    <nav
+        id="mobile-menu"
+        class="hidden bg-black/80 backdrop-blur-md w-full flex flex-col items-center text-center text-2xl fixed top-0 left-0 h-dvh place-content-center font-extralight"
+    >
+        <a class="my-4 hover:underline" href="/info">Info</a>
+        <a class="my-4 hover:underline" href="/archivo">Archivo</a>
+        <button
+        class="my-4 whitespace-nowrap text-center lg:hidden lg:text-base rounded-full border-2 p-4"
+        >ESLAND: EL DOCUMENTAL</button
+        >
+    </nav>
 </header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+
+        if (!menuToggle || !mobileMenu || !menuIcon) return;
+
+        menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        menuIcon.classList.toggle("flex");
+        menuIcon.textContent = menuIcon.textContent === "☰" ? "✕" : "☰";
+        });
+    });
+</script>
